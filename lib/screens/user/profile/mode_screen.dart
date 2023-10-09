@@ -25,7 +25,7 @@ class _ModeScreenState extends State<ModeScreen> {
           children: [
             CustomTextWidget(
               text: 'Driver Mode',
-              fSize: 20,
+              fSize: 16,
             ),
             Switch(
               activeColor: Colors.black87,

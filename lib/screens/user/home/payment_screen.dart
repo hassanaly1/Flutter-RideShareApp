@@ -30,7 +30,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           children: [
             CustomTextWidget(
               text: 'Select the payment method you want to use',
-              fSize: 18,
+              fSize: 14,
             ),
             ListView.builder(
               shrinkWrap: true,
@@ -51,7 +51,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 );
               },
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 25),
             SingleChildScrollView(
               child: Visibility(
                 visible: isOnlineTransferSelected,
@@ -63,24 +63,24 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     children: [
                       CustomTextWidget(
                         text: 'Card Information',
-                        fSize: 20,
+                        fSize: 16,
                         fWeight: FontWeight.w500,
                       ),
                       SizedBox(height: 15),
                       CustomTextField(
-                        height: 60,
+                        height: 50,
                         hintText: 'Card Number',
                         keyboardType: TextInputType.number,
                       ),
                       SizedBox(height: 15),
                       CustomTextField(
-                        height: 60,
+                        height: 50,
                         hintText: 'Card Epiration (mm/yy)',
                         keyboardType: TextInputType.number,
                       ),
                       SizedBox(height: 15),
                       CustomTextField(
-                        height: 60,
+                        height: 50,
                         hintText: 'Card Security Code',
                         keyboardType: TextInputType.number,
                       ),

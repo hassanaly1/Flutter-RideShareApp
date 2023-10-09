@@ -130,7 +130,7 @@ class _BookingCarSeatScreenState extends State<BookingCarSeatScreen> {
               const SizedBox(height: 10),
               CustomTextWidget(
                 text: 'Total Price: \$${totalPrice.toStringAsFixed(2)}',
-                fSize: 18,
+                fSize: 14,
               ),
             ],
           ),
@@ -178,7 +178,7 @@ class _BookingCarSeatScreenState extends State<BookingCarSeatScreen> {
             ),
             Image.asset(
               'assets/seat.png',
-              height: 50,
+              height: 40,
               alignment: Alignment.center,
               color: seat.isSelected
                   ? Color.fromARGB(255, 182, 16, 16)
@@ -186,7 +186,7 @@ class _BookingCarSeatScreenState extends State<BookingCarSeatScreen> {
             ),
             CustomTextWidget(
               text: isDriverSeat ? 'Driver' : 'Passenger',
-              fSize: 20.0,
+              fSize: 16.0,
               fWeight: FontWeight.w700,
             ),
           ],

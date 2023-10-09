@@ -12,12 +12,8 @@ class BookingBusSeatScreen extends StatefulWidget {
 }
 
 class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
-  List<Seat> seats = List.generate(4, (index) {
-    if (index == 3) {
-      return Seat(index + 1, 20.0, false, isDriverSeat: true);
-    } else {
-      return Seat(index + 1, 20.0, false);
-    }
+  List<Seat> seats = List.generate(18, (index) {
+    return Seat(index + 1, 20.0, false);
   });
 
   @override
@@ -32,7 +28,7 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
             Expanded(
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                  crossAxisCount: 3,
                   crossAxisSpacing: 12.0,
                   mainAxisSpacing: 12.0,
                 ),
@@ -63,11 +59,9 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
   }
 
   void _toggleSeatSelection(Seat seat) {
-    if (!seat.isDriverSeat) {
-      setState(() {
-        seat.isSelected = !seat.isSelected;
-      });
-    }
+    setState(() {
+      seat.isSelected = !seat.isSelected;
+    });
   }
 
   void _showSelectedSeats() {
@@ -150,9 +144,7 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
   Widget _SeatLayout(Seat seat) {
     return GestureDetector(
       onTap: () {
-        if (!seat.isDriverSeat) {
-          _toggleSeatSelection(seat);
-        }
+        _toggleSeatSelection(seat);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -183,15 +175,14 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
                   ? Color.fromARGB(255, 182, 16, 16)
                   : Colors.black45,
             ),
-            if (seat.isDriverSeat)
-              Text(
-                'Driver',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+            Text(
+              'Passenger',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
+            ),
           ],
         ),
       ),
@@ -203,7 +194,10 @@ class Seat {
   final int number;
   final double price;
   bool isSelected;
-  final bool isDriverSeat;
 
-  Seat(this.number, this.price, this.isSelected, {this.isDriverSeat = false});
+  Seat(
+    this.number,
+    this.price,
+    this.isSelected,
+  );
 }

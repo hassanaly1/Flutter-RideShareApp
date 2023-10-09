@@ -30,14 +30,14 @@ class ForgetPasswordScreen extends StatelessWidget {
                 const SizedBox(height: 25),
                 const CustomTextWidget(
                   text: 'Forget Password?',
-                  fSize: 25.0,
+                  fSize: 22.0,
                   fWeight: FontWeight.w700,
                 ),
                 const SizedBox(height: 10),
                 const CustomTextWidget(
                   text: "No Worries, we'll send you the reset code.",
-                  fSize: 16.0,
-                  fWeight: FontWeight.w700,
+                  fSize: 14.0,
+                  fWeight: FontWeight.w400,
                   textColor: Colors.black38,
                 ),
                 const SizedBox(height: 25),

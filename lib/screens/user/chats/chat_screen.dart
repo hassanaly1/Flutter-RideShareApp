@@ -79,12 +79,12 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                         title: CustomTextWidget(
                           text: chatData[index][0].toString(),
-                          fSize: 22,
+                          fSize: 16,
                           fWeight: FontWeight.w600,
                         ),
                         subtitle: CustomTextWidget(
                           text: chatData[index][1].toString(),
-                          fSize: 18,
+                          fSize: 14,
                           fWeight: FontWeight.w400,
                         ),
                         trailing: Icon(CupertinoIcons.phone_arrow_down_left),

@@ -10,7 +10,7 @@ AppBar CustomAppBarWidget(
   return AppBar(
     automaticallyImplyLeading: automaticallyImplyLeading ?? true,
     leading: leading,
-    title: CustomTextWidget(text: title, fSize: 20.0, fWeight: FontWeight.w700),
+    title: CustomTextWidget(text: title, fSize: 16.0, fWeight: FontWeight.w700),
     centerTitle: true,
     backgroundColor: AppAssets.backgroundColor,
     elevation: 0,

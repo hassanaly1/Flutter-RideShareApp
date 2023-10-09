@@ -57,7 +57,7 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                       SizedBox(height: 20),
                       CustomTextWidget(
                         text: 'Great! You have 1 request',
-                        fSize: 22,
+                        fSize: 14,
                         fWeight: FontWeight.w700,
                       ),
                       SizedBox(height: 20),
@@ -79,26 +79,26 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                                 children: [
                                   CustomTextWidget(
                                     text: 'Ricky James',
-                                    fSize: 22,
+                                    fSize: 16,
                                     fWeight: FontWeight.w600,
                                   ),
                                   SizedBox(width: 12),
                                   CustomTextWidget(
                                     text: 'Pickup: 3400 Center St',
-                                    fSize: 16,
+                                    fSize: 14,
                                     fWeight: FontWeight.w400,
                                   ),
                                   SizedBox(width: 12),
                                   CustomTextWidget(
                                     text: 'Drop: 712 rue Parc',
-                                    fSize: 16,
+                                    fSize: 14,
                                     fWeight: FontWeight.w400,
                                   )
                                 ],
                               ),
                               CustomTextWidget(
                                 text: '\$15',
-                                fSize: 20,
+                                fSize: 14,
                               ),
                             ],
                           ),
@@ -123,7 +123,7 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 20),
                           Padding(
                             padding: const EdgeInsets.all(16.0),
                             child: CustomButton(
@@ -140,7 +140,7 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                 )
               : CustomTextWidget(
                   text: 'No Ride request at the moment.',
-                  fSize: 22,
+                  fSize: 16,
                   fWeight: FontWeight.w400,
                 ),
         ],

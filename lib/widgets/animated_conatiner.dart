@@ -81,12 +81,10 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
         duration: Duration(microseconds: 0),
         height: isContainerExpanded
             ? (widget.isBooked
-                ? (widget.seePickupPoints
-                    ? Get.height * 0.9
-                    : Get.height * 0.75)
+                ? (widget.seePickupPoints ? Get.height * 0.9 : Get.height * 0.8)
                 : (widget.seePickupPoints
                     ? Get.height * 0.85
-                    : Get.height * 0.65))
+                    : Get.height * 0.67))
             : Get.height * 0.20,
         width: Get.width * 0.8,
         decoration: BoxDecoration(
@@ -111,13 +109,13 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                   children: [
                     CustomTextWidget(
                       text: widget.driverName,
-                      fSize: 18,
+                      fSize: 14,
                       fWeight: FontWeight.w600,
                     ),
                     SizedBox(width: 12),
                     CustomTextWidget(
                       text: 'Honda Mobilio',
-                      fSize: 15,
+                      fSize: 12,
                       fWeight: FontWeight.w400,
                     ),
                   ],
@@ -132,7 +130,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                   child: Center(
                     child: CustomTextWidget(
                       text: widget.text,
-                      fSize: 16,
+                      fSize: 12,
                       fWeight: FontWeight.w400,
                       textColor: Colors.white,
                       textAlign: TextAlign.center,
@@ -140,7 +138,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 5),
               const Divider(
                 color: Colors.black26,
                 height: 25,
@@ -152,11 +150,11 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                 icon: isContainerExpanded
                     ? Icon(
                         FluentIcons.arrow_up_12_filled,
-                        size: 15,
+                        size: 12,
                       )
                     : Icon(
                         FluentIcons.arrow_down_12_filled,
-                        size: 15,
+                        size: 12,
                       ),
                 onPressed: toggleContainer,
               ),
@@ -202,7 +200,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                       TimelineTile(
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
-                          width: 15,
+                          width: 10,
                           color: Colors.black, // Timeline color is green
                         ),
                         endChild: Padding(
@@ -213,13 +211,13 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                               CustomTextWidget(
                                 text: '4753 Hyde Park Road',
                                 textColor: Colors.black,
-                                fSize: 22,
+                                fSize: 14,
                                 fWeight: FontWeight.w500,
                               ),
                               CustomTextWidget(
                                 text: '3 km',
                                 textColor: Colors.black,
-                                fSize: 18,
+                                fSize: 14,
                                 fWeight: FontWeight.w300,
                               ),
                             ],
@@ -230,7 +228,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                       TimelineTile(
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
-                          width: 15,
+                          width: 10,
                           color: Colors.black, // Timeline color is green
                         ),
                         endChild: Padding(
@@ -241,13 +239,13 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                               CustomTextWidget(
                                 text: '3333 Albert Street',
                                 textColor: Colors.black,
-                                fSize: 22,
+                                fSize: 14,
                                 fWeight: FontWeight.w500,
                               ),
                               CustomTextWidget(
                                 text: '7 km',
                                 textColor: Colors.black,
-                                fSize: 18,
+                                fSize: 14,
                                 fWeight: FontWeight.w300,
                               ),
                             ],
@@ -273,10 +271,13 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                         ),
                       ),
                       SizedBox(height: Get.height * 0.03),
-                      CustomButton(
-                        buttonText: 'See Passengers',
-                        onTap: () => Get.to(SeePassengerList(),
-                            transition: Transition.downToUp),
+                      Visibility(
+                        visible: widget.isBooked,
+                        child: CustomButton(
+                          buttonText: 'See Passengers',
+                          onTap: () => Get.to(SeePassengerList(),
+                              transition: Transition.downToUp),
+                        ),
                       ),
                       SizedBox(height: Get.height * 0.03),
                       Visibility(

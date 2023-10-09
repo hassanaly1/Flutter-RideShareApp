@@ -61,7 +61,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                       ),
                       title: CustomTextWidget(
                         text: paymentHistory[index][0].toString(),
-                        fSize: 22,
+                        fSize: 16,
                         fWeight: FontWeight.w600,
                       ),
                       subtitle: InkWell(
@@ -71,13 +71,13 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                         child: CustomTextWidget(
                           text: 'Give Feedback',
                           textColor: Colors.red,
-                          fSize: 18,
+                          fSize: 14,
                           fWeight: FontWeight.w400,
                         ),
                       ),
                       trailing: CustomTextWidget(
                         text: paymentHistory[index][1].toString(),
-                        fSize: 20,
+                        fSize: 16,
                         fWeight: FontWeight.w600,
                       ),
                     ),
@@ -103,7 +103,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
               Center(
                 child: CustomTextWidget(
                   text: 'How is your Driver?',
-                  fSize: 24,
+                  fSize: 16,
                   fWeight: FontWeight.w700,
                 ),
               ),

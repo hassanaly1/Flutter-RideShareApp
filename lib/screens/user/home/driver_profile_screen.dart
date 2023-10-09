@@ -41,12 +41,12 @@ class _DriverProfileViewState extends State<DriverProfileView> {
                     children: [
                       CustomTextWidget(
                         text: 'Daniel Austin',
-                        fSize: 26,
+                        fSize: 16,
                         fWeight: FontWeight.w600,
                       ),
                       CustomTextWidget(
                         text: '+1 202-555-687',
-                        fSize: 20,
+                        fSize: 14,
                         fWeight: FontWeight.w400,
                       ),
                     ],
@@ -133,11 +133,11 @@ class _DriverProfileViewState extends State<DriverProfileView> {
                         children: [
                           CustomTextWidget(
                               text: 'Member Since',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                           CustomTextWidget(
                               text: 'July 15, 2019',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                         ],
                       ),
@@ -146,11 +146,11 @@ class _DriverProfileViewState extends State<DriverProfileView> {
                         children: [
                           CustomTextWidget(
                               text: 'Car Model',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                           CustomTextWidget(
                               text: 'Mercedes-Benz E-Class',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                         ],
                       ),
@@ -159,11 +159,11 @@ class _DriverProfileViewState extends State<DriverProfileView> {
                         children: [
                           CustomTextWidget(
                               text: 'Plate Number',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                           CustomTextWidget(
                               text: 'HSW 3893 KX',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w400),
                         ],
                       ),
@@ -200,7 +200,7 @@ class CustomIconContainer extends StatelessWidget {
           padding: const EdgeInsets.all(12.0),
           child: Icon(
             icon,
-            size: 35,
+            size: 20,
             color: Colors.white,
           ),
         ),
@@ -230,12 +230,12 @@ class CustomRatingWidget extends StatelessWidget {
           Icon(icon),
           CustomTextWidget(
             text: text,
-            fSize: 24,
+            fSize: 16,
             fWeight: FontWeight.w700,
           ),
           CustomTextWidget(
             text: subText,
-            fSize: 20,
+            fSize: 16,
             fWeight: FontWeight.w400,
           ),
         ],

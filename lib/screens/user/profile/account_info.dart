@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps/widgets/custom_text_widget.dart';
 import 'package:google_maps/constants/colors.dart';
+import 'package:google_maps/widgets/custom_text_widget.dart';
 
 class AccountInfo extends StatelessWidget {
   const AccountInfo({super.key});
@@ -21,7 +21,7 @@ class AccountInfo extends StatelessWidget {
             children: [
               CustomTextWidget(
                 text: 'Account info',
-                fSize: 25,
+                fSize: 20,
                 fWeight: FontWeight.w700,
               ),
               SizedBox(height: 10),
@@ -32,7 +32,7 @@ class AccountInfo extends StatelessWidget {
               SizedBox(height: 10),
               CustomTextWidget(
                 text: 'Basic info',
-                fSize: 20,
+                fSize: 16,
                 fWeight: FontWeight.w500,
               ),
               ReUsableAccountInfoWidget(
@@ -74,7 +74,7 @@ class ReUsableAccountInfoWidget extends StatelessWidget {
         children: [
           CustomTextWidget(
             text: infoType,
-            fSize: 20,
+            fSize: 16,
             fWeight: FontWeight.w300,
           ),
           const SizedBox(height: 5),

@@ -22,7 +22,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           children: [
             CustomTextWidget(
               text: 'Notifications',
-              fSize: 20,
+              fSize: 16,
             ),
             Switch(
               activeColor: Colors.black87,

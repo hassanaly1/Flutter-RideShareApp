@@ -28,7 +28,7 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(6.0),
         child: TextFormField(
           controller: controller, // Use the provided controller
           keyboardType: keyboardType,

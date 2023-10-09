@@ -36,11 +36,11 @@ class EmergencyScreen extends StatelessWidget {
                     children: [
                       CustomTextWidget(
                         text: names[index],
-                        fSize: 20,
+                        fSize: 16,
                       ),
                       CustomTextWidget(
                         text: phoneNumbers[index],
-                        fSize: 20,
+                        fSize: 14,
                       ),
                     ],
                   ),

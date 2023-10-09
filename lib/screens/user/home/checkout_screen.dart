@@ -34,12 +34,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Bus Ticket", fSize: 18),
+                CustomTextWidget(text: "Bus Ticket", fSize: 14),
                 SizedBox(
                   width: 20,
                 ),
                 CustomTextWidget(
-                    text: "  × 1", fWeight: FontWeight.w600, fSize: 18)
+                    text: "  × 1", fWeight: FontWeight.w600, fSize: 14)
               ],
             ),
             const Divider(
@@ -48,12 +48,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Ticket Number", fSize: 18),
+                CustomTextWidget(text: "Ticket Number", fSize: 14),
                 SizedBox(
                   width: 20,
                 ),
                 CustomTextWidget(
-                    text: "26", fWeight: FontWeight.w600, fSize: 18),
+                    text: "26", fWeight: FontWeight.w600, fSize: 14),
               ],
             ),
             const Divider(
@@ -62,12 +62,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Pickup", fSize: 18),
+                CustomTextWidget(text: "Pickup", fSize: 14),
                 SizedBox(
                   width: 20,
                 ),
                 CustomTextWidget(
-                    text: "abc, Canada", fWeight: FontWeight.w600, fSize: 18),
+                    text: "abc, Canada", fWeight: FontWeight.w600, fSize: 14),
               ],
             ),
             const Divider(
@@ -76,12 +76,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Dropoff", fSize: 18),
+                CustomTextWidget(text: "Dropoff", fSize: 14),
                 SizedBox(
                   width: 20,
                 ),
                 CustomTextWidget(
-                    text: "xyz, Canada", fWeight: FontWeight.w600, fSize: 18),
+                    text: "xyz, Canada", fWeight: FontWeight.w600, fSize: 14),
               ],
             ),
             const Divider(
@@ -90,14 +90,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Payment\nMethod:", fSize: 18),
+                CustomTextWidget(text: "Payment\nMethod:", fSize: 14),
                 SizedBox(
                   width: 10,
                 ),
                 CustomTextWidget(
                     text: "Online Transfer",
                     fWeight: FontWeight.w600,
-                    fSize: 18),
+                    fSize: 14),
               ],
             ),
             const SizedBox(
@@ -109,12 +109,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const Row(
               //  crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "Total", fSize: 18),
+                CustomTextWidget(text: "Total", fSize: 14),
                 SizedBox(
                   width: 45,
                 ),
                 CustomTextWidget(
-                    text: "\$40.00", fWeight: FontWeight.w600, fSize: 18),
+                    text: "\$40.00", fWeight: FontWeight.w600, fSize: 14),
               ],
             ),
             Spacer(),
@@ -140,12 +140,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: AlertDialog(
             title: CustomTextWidget(
               text: "Thankyou for booking with Rillu",
-              fSize: 20,
+              fSize: 16,
               fWeight: FontWeight.w500,
             ),
             content: CustomTextWidget(
               text: 'See you on the trip.',
-              fSize: 18,
+              fSize: 14,
             ),
             actions: [
               Padding(

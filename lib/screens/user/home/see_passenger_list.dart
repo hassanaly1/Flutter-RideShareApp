@@ -22,7 +22,7 @@ class SeePassengerList extends StatelessWidget {
                   ),
                   title: CustomTextWidget(
                     text: 'Tom Smith',
-                    fSize: 20,
+                    fSize: 16,
                     fWeight: FontWeight.w500,
                   ),
                   subtitle: CustomTextWidget(

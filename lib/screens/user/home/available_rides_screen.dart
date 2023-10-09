@@ -57,7 +57,7 @@ class _AvailableRideScreenState extends State<AvailableRideScreen> {
           title: CustomTextWidget(
             text: 'Available Rides',
             fWeight: FontWeight.bold,
-            fSize: 20.0,
+            fSize: 16.0,
           ),
           centerTitle: true,
           actions: [
@@ -80,7 +80,7 @@ class _AvailableRideScreenState extends State<AvailableRideScreen> {
           bottom: TabBar(
             physics: AlwaysScrollableScrollPhysics(),
             labelStyle: GoogleFonts.poppins(
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
@@ -111,7 +111,7 @@ class _AvailableRideScreenState extends State<AvailableRideScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: CustomTextWidget(
                         text: "Available Rides for ${widget.selectedDate}",
-                        fSize: 22,
+                        fSize: 16,
                         fWeight: FontWeight.w600,
                       ),
                     ),

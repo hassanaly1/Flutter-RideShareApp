@@ -83,7 +83,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
           backgroundColor: Colors.white,
           title: CustomTextWidget(
             text: 'Welcome back Andrew👋🏻',
-            fSize: 20.0,
+            fSize: 16.0,
             fWeight: FontWeight.w700,
           ),
           automaticallyImplyLeading: false,
@@ -96,14 +96,14 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
               children: [
                 CustomTextWidget(
                   text: 'Your Rides Schedule',
-                  fSize: 22,
+                  fSize: 16,
                   fWeight: FontWeight.w700,
                   textAlign: TextAlign.center,
                 ),
                 TimelineTile(
                   alignment: TimelineAlign.start,
                   indicatorStyle: IndicatorStyle(
-                    width: 15,
+                    width: 10,
                     color: Colors.black, // Timeline color is green
                   ),
                   endChild: Padding(
@@ -111,7 +111,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                     child: CustomTextWidget(
                       text: 'From Toronto',
                       textColor: Colors.black,
-                      fSize: 22,
+                      fSize: 14,
                       fWeight: FontWeight.w500,
                     ),
                   ),
@@ -120,7 +120,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                 TimelineTile(
                   alignment: TimelineAlign.start,
                   indicatorStyle: IndicatorStyle(
-                    width: 15,
+                    width: 10,
                     color: Colors.black, // Timeline color is green
                   ),
                   endChild: Padding(
@@ -128,7 +128,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                     child: CustomTextWidget(
                       text: 'To Victoria',
                       textColor: Colors.black,
-                      fSize: 22,
+                      fSize: 14,
                       fWeight: FontWeight.w500,
                     ),
                   ),
@@ -137,7 +137,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                 Divider(thickness: 2),
                 CustomTextWidget(
                   text: 'Pickup Points',
-                  fSize: 22,
+                  fSize: 16,
                   fWeight: FontWeight.w700,
                   textAlign: TextAlign.center,
                 ),
@@ -162,7 +162,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                                 title: CustomTextWidget(
                                   text:
                                       'Pickup Point: ${pickupPoints[index].address}',
-                                  fSize: 20,
+                                  fSize: 16,
                                   fWeight: FontWeight.w700,
                                 ),
                                 subtitle: Column(
@@ -171,19 +171,19 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
                                     CustomTextWidget(
                                       text:
                                           'Arrival Time: ${pickupPoints[index].arrivalTime}',
-                                      fSize: 16,
+                                      fSize: 14,
                                       fWeight: FontWeight.w400,
                                     ),
                                     CustomTextWidget(
                                       text:
                                           'Departure Time: ${pickupPoints[index].departureTime}',
-                                      fSize: 16,
+                                      fSize: 14,
                                       fWeight: FontWeight.w400,
                                     ),
                                     CustomTextWidget(
                                       text:
                                           'Price: \$${pickupPoints[index].price.toStringAsFixed(2)}',
-                                      fSize: 16,
+                                      fSize: 14,
                                       fWeight: FontWeight.w400,
                                     ),
                                   ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_maps/screens/user/bottombar.dart';
 import 'package:google_maps/screens/auth/forgetpassword_screen.dart';
 import 'package:google_maps/screens/auth/signup.dart';
+import 'package:google_maps/screens/user/bottombar.dart';
 import 'package:google_maps/widgets/custom_button.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
 import 'package:google_maps/widgets/custom_textfield.dart';
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 20),
                 const CustomTextWidget(
                   text: 'Login to your account',
-                  fSize: 30,
+                  fSize: 22,
                   fWeight: FontWeight.w700,
                 ),
                 const SizedBox(height: 40),

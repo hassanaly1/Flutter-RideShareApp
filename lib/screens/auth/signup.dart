@@ -27,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 25),
                 const CustomTextWidget(
                   text: 'Register Account',
-                  fSize: 30,
+                  fSize: 22,
                   fWeight: FontWeight.w700,
                 ),
                 const SizedBox(height: 25),

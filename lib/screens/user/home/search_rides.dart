@@ -23,8 +23,6 @@ class _SearchRidesScreenState extends State<SearchRidesScreen> {
     '123 Main St, Springfield, IL',
     '456 Elm St, Bristol, CT',
     '789 Oak Ave, Seattle, WA',
-    '321 Pine Rd, Portland, OR',
-    '567 Maple Ln, Los Angeles, CA',
   ];
   @override
   Widget build(BuildContext context) {
@@ -60,7 +58,7 @@ class _SearchRidesScreenState extends State<SearchRidesScreen> {
                       child: TextFormField(
                         decoration: InputDecoration(
                           hintStyle:
-                              TextStyle(color: Colors.black54, fontSize: 18),
+                              TextStyle(color: Colors.black54, fontSize: 14),
                           border: InputBorder.none,
                           hintText: 'Current Location',
                         ),
@@ -85,7 +83,7 @@ class _SearchRidesScreenState extends State<SearchRidesScreen> {
                       child: TextFormField(
                         decoration: InputDecoration(
                           hintStyle:
-                              TextStyle(color: Colors.black54, fontSize: 18),
+                              TextStyle(color: Colors.black54, fontSize: 14),
                           border: InputBorder.none,
                           hintText: 'Where to?',
                         ),

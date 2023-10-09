@@ -35,20 +35,20 @@ class _CollectPaymentScreenState extends State<CollectPaymentScreen> {
             children: [
               CustomTextWidget(
                 text: "You have recieved your payment",
-                fSize: 30,
+                fSize: 16,
                 fWeight: FontWeight.w700,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 15),
               CustomTextWidget(
                 text: 'Collect Payment.',
-                fSize: 22,
+                fSize: 16,
                 fWeight: FontWeight.w500,
               ),
               SizedBox(height: 15),
               CustomTextWidget(
                 text: '\$15',
-                fSize: 30,
+                fSize: 18,
                 fWeight: FontWeight.w700,
               ),
               SizedBox(height: 15),
@@ -67,7 +67,7 @@ class _CollectPaymentScreenState extends State<CollectPaymentScreen> {
                       children: [
                         CustomTextWidget(
                           text: 'How is your Customer?',
-                          fSize: 24,
+                          fSize: 16,
                           fWeight: FontWeight.w500,
                         ),
                         SizedBox(height: 15),
@@ -102,7 +102,7 @@ class _CollectPaymentScreenState extends State<CollectPaymentScreen> {
                           onPressed: () {},
                           child: CustomTextWidget(
                             text: 'Report User?',
-                            fSize: 16,
+                            fSize: 14,
                             textColor: Colors.red,
                             fWeight: FontWeight.w400,
                           ),

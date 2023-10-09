@@ -58,12 +58,12 @@ class _OTPScreenState extends State<OTPScreen> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SizedBox(height: Get.height * 0.15),
+                SizedBox(height: Get.height * 0.1),
                 Image.asset('assets/applogo.jpg', height: 120, width: 300),
                 const SizedBox(height: 25),
                 const CustomTextWidget(
                   text: 'Enter OTP',
-                  fSize: 30.0,
+                  fSize: 22.0,
                   fWeight: FontWeight.w700,
                 ),
                 const SizedBox(height: 10.0),

@@ -21,7 +21,7 @@ class CustomTextWidget extends StatelessWidget {
       text,
       textAlign: textAlign ?? null,
       style: GoogleFonts.poppins(
-        fontSize: fSize ?? 16,
+        fontSize: fSize ?? 12,
         fontWeight: fWeight ?? FontWeight.w400,
         color: textColor ?? Colors.black,
       ),

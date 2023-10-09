@@ -92,7 +92,7 @@ class _DriverChatScreenState extends State<DriverChatScreen> {
                             padding: EdgeInsets.all(12),
                             child: CustomTextWidget(
                               text: message.message,
-                              fSize: 20,
+                              fSize: 14,
                               textColor: message.isSender
                                   ? Colors.white
                                   : Colors.black,
@@ -106,17 +106,16 @@ class _DriverChatScreenState extends State<DriverChatScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 60,
+                height: 40,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 6, horizontal: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: TextFormField(
                     style: GoogleFonts.poppins(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
                     ),
@@ -124,14 +123,17 @@ class _DriverChatScreenState extends State<DriverChatScreen> {
                     onFieldSubmitted: (message) {},
                     decoration: InputDecoration(
                       hintStyle: GoogleFonts.poppins(
-                        fontSize: 20,
+                        fontSize: 14,
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
                       ),
                       border: InputBorder.none,
                       hintText: 'Message',
                       suffixIcon: IconButton(
-                        icon: Icon(Icons.send),
+                        icon: Icon(
+                          Icons.send,
+                          size: 14,
+                        ),
                         onPressed: () {
                           setState(() {
                             WidgetsBinding.instance.addPostFrameCallback((_) {

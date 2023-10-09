@@ -66,7 +66,7 @@ class _PickUpPointsState extends State<PickUpPoints> {
                       color: Colors.grey.shade200,
                       borderRadius: BorderRadius.circular(12)),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -79,19 +79,19 @@ class _PickUpPointsState extends State<PickUpPoints> {
                               children: [
                                 CustomTextWidget(
                                   text: pickupPoints[index].address,
-                                  fSize: 20,
-                                  fWeight: FontWeight.w700,
+                                  fSize: 14,
+                                  fWeight: FontWeight.w500,
                                 ),
                                 CustomTextWidget(
                                   text:
                                       'Arrival Time: ${pickupPoints[index].arrivalTime.toString()}',
-                                  fSize: 15,
+                                  fSize: 12,
                                   fWeight: FontWeight.w400,
                                 ),
                                 CustomTextWidget(
                                   text:
                                       'Departure Time: ${pickupPoints[index].departureTime.toString()}',
-                                  fSize: 15,
+                                  fSize: 12,
                                   fWeight: FontWeight.w400,
                                 ),
                               ],
@@ -99,7 +99,7 @@ class _PickUpPointsState extends State<PickUpPoints> {
                             CustomTextWidget(
                               text:
                                   'Price: \$${pickupPoints[index].price.toString()}',
-                              fSize: 18,
+                              fSize: 14,
                               fWeight: FontWeight.w500,
                             ),
                           ],

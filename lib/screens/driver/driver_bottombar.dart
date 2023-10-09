@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps/screens/driver/home/driver_home_screen.dart';
-import 'package:google_maps/screens/driver/home/driver_rides_screen.dart';
+import 'package:google_maps/screens/driver/rides/driver_rides_screen.dart';
 import 'package:google_maps/screens/driver/profile/driver_profile_screen.dart';
 import 'package:google_maps/screens/user/chats/chat_screen.dart';
 import 'package:google_maps/screens/user/payment_history_screen.dart';

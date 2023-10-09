@@ -15,7 +15,7 @@ class ComplianceScreen extends StatelessWidget {
             CustomTextWidget(
               text:
                   'Ensure Compliance with Local and National Transportation Regulations',
-              fSize: 20,
+              fSize: 16,
               fWeight: FontWeight.w500,
             ),
             SizedBox(height: 16.0),
