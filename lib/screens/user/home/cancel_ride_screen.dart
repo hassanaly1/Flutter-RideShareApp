@@ -34,7 +34,7 @@ class _CancelRideState extends State<CancelRide> {
         children: [
           CustomTextWidget(
             text: 'Please select the reason(s) for cancellation.',
-            fSize: 18,
+            fSize: 16,
           ),
           ListView.builder(
             shrinkWrap: true,
@@ -65,7 +65,7 @@ class _CancelRideState extends State<CancelRide> {
                     SizedBox(width: 10),
                     CustomTextWidget(
                       text: reason,
-                      fSize: 18,
+                      fSize: 12,
                     ),
                   ],
                 ),
@@ -89,13 +89,13 @@ class _CancelRideState extends State<CancelRide> {
                         buttonPadding: EdgeInsets.all(10),
                         title: CustomTextWidget(
                           text: "We're so sad about your cancellation.",
-                          fSize: 24,
+                          fSize: 18,
                           fWeight: FontWeight.w700,
                         ),
                         content: CustomTextWidget(
                           text:
                               'We will continue to improve our service & satisfy you on the next trip.',
-                          fSize: 16,
+                          fSize: 14,
                         ),
                         actions: [
                           CustomButton(

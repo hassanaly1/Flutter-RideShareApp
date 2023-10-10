@@ -100,7 +100,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                       transition: Transition.rightToLeft);
                 },
                 leading: CircleAvatar(
-                  child: Image(image: AssetImage('assets/saim.jpg')),
+                  child: Image(image: AssetImage('assets/car.jpg')),
                   radius: 30,
                 ),
                 title: Column(

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps/widgets/custom_appbar.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
 
-class RequestRideScreen extends StatelessWidget {
-  const RequestRideScreen({super.key});
+class RideNotificationScreen extends StatelessWidget {
+  const RideNotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class RequestRideScreen extends StatelessWidget {
       appBar: CustomAppBarWidget(title: 'Requested Rides'),
       body: ListView.builder(
         shrinkWrap: true,
-        itemCount: 4,
+        itemCount: 1,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),

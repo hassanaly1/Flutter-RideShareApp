@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_maps/screens/user/home/cancel_ride_screen.dart';
 import 'package:google_maps/screens/user/home/picup_points.dart';
 import 'package:google_maps/widgets/animated_conatiner.dart';
+import 'package:google_maps/widgets/custom_text_widget.dart';
 
 class MyBookings extends StatefulWidget {
   const MyBookings({Key? key}) : super(key: key);
@@ -35,10 +36,12 @@ class _MyBookingsState extends State<MyBookings> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.white,
-          title: Text(
-            "My Rides",
-            style: TextStyle(fontWeight: FontWeight.bold),
+          title: CustomTextWidget(
+            text: "My Rides",
+            fSize: 16,
+            fWeight: FontWeight.w700,
           ),
           leading: IconButton(
             onPressed: () {},

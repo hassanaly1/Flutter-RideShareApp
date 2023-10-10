@@ -28,7 +28,7 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
             Expanded(
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+                  crossAxisCount: 4,
                   crossAxisSpacing: 12.0,
                   mainAxisSpacing: 12.0,
                 ),
@@ -163,7 +163,7 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
                     ? Color.fromARGB(255, 182, 16, 16)
                     : Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 12,
               ),
             ),
             SizedBox(height: 5),
@@ -180,7 +180,7 @@ class _BookingBusSeatScreenState extends State<BookingBusSeatScreen> {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 12,
               ),
             ),
           ],

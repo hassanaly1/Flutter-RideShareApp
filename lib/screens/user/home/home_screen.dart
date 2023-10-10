@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps/screens/user/home/book_bus_seat_screen.dart';
 import 'package:google_maps/screens/user/home/book_car_seat_screen.dart';
-import 'package:google_maps/screens/user/home/request_ride_screen.dart';
+import 'package:google_maps/screens/user/home/request_ride_dialog.dart';
+import 'package:google_maps/screens/user/home/ride_notification_screen.dart';
 import 'package:google_maps/screens/user/home/search_rides.dart';
 import 'package:google_maps/widgets/animated_conatiner.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
@@ -39,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             InkWell(
               onTap: () {
-                Get.to(RequestRideScreen(), transition: Transition.upToDown);
+                Get.to(RideNotificationScreen(),
+                    transition: Transition.upToDown);
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -47,6 +49,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: Text("3"),
                   child: Icon(Icons.notifications),
                 ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Get.to(SearchRidesScreen(), transition: Transition.downToUp);
+              },
+              child: Container(
+                padding: EdgeInsets.all(20),
+                child: Icon(Icons.search),
               ),
             ),
           ],
@@ -129,12 +140,22 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Get.to(SearchRidesScreen(), transition: Transition.downToUp);
-          },
-          child: Icon(Icons.search),
-        ),
+        floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: Colors.black,
+            onPressed: () {
+              showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (BuildContext context) {
+                  return RequestRideDialog();
+                },
+              );
+            },
+            label: CustomTextWidget(
+              text: 'Request a Ride?',
+              fWeight: FontWeight.w700,
+              textColor: Colors.white,
+            )),
       ),
     );
   }

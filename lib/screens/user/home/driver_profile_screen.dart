@@ -66,8 +66,8 @@ class _DriverProfileViewState extends State<DriverProfileView> {
                             width: MediaQuery.of(context).size.width,
                             margin: EdgeInsets.symmetric(horizontal: 5.0),
                             decoration: BoxDecoration(color: Colors.amber),
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcG5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
+                            child: Image.asset(
+                              'assets/car.PNG',
                               fit: BoxFit.cover,
                             ));
                       },
