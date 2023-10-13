@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps/widgets/custom_text_widget.dart';
 import 'package:google_maps/constants/colors.dart';
+import 'package:google_maps/models/user_info.dart';
+import 'package:google_maps/widgets/custom_text_widget.dart';
 
 class DriverAccountInfo extends StatelessWidget {
-  const DriverAccountInfo({super.key});
+  final UserInfoModel userInfoModel;
+  const DriverAccountInfo({super.key, required this.userInfoModel});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class DriverAccountInfo extends StatelessWidget {
         backgroundColor: AppAssets.backgroundColor,
         elevation: 0,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
           child: Column(
@@ -21,31 +23,32 @@ class DriverAccountInfo extends StatelessWidget {
             children: [
               CustomTextWidget(
                 text: 'Account info',
-                fSize: 25,
+                fSize: 20,
                 fWeight: FontWeight.w700,
               ),
               SizedBox(height: 10),
               CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/saim.jpg'),
+                backgroundImage:
+                    AssetImage('${userInfoModel.userProfilePicture}'),
               ),
               SizedBox(height: 10),
               CustomTextWidget(
                 text: 'Basic info',
-                fSize: 20,
+                fSize: 16,
                 fWeight: FontWeight.w500,
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Name',
-                infoValue: 'John Smith',
+                infoValue: '${userInfoModel.username}',
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Phone Number',
-                infoValue: '+123456789',
+                infoValue: '${userInfoModel.userPhoneNumber.toString()}',
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Email',
-                infoValue: 'john@gmail.com',
+                infoValue: '${userInfoModel.userEmail}',
               ),
             ],
           ),
@@ -74,7 +77,7 @@ class ReUsableAccountInfoWidget extends StatelessWidget {
         children: [
           CustomTextWidget(
             text: infoType,
-            fSize: 20,
+            fSize: 16,
             fWeight: FontWeight.w300,
           ),
           const SizedBox(height: 5),

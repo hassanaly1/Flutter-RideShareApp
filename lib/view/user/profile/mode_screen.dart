@@ -6,14 +6,15 @@ import 'package:google_maps/widgets/custom_appbar.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
 
 class ModeScreen extends StatefulWidget {
-  const ModeScreen({super.key});
+  bool isDriver;
+  ModeScreen({super.key, required this.isDriver});
 
   @override
   State<ModeScreen> createState() => _ModeScreenState();
 }
 
 class _ModeScreenState extends State<ModeScreen> {
-  bool isDriverModeOn = false;
+  // bool isDriverModeOn = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,12 +30,10 @@ class _ModeScreenState extends State<ModeScreen> {
             ),
             Switch(
               activeColor: Colors.black87,
-              value:
-                  isDriverModeOn, // Replace with your variable for tracking the notification state
+              value: widget.isDriver,
               onChanged: (newValue) {
-                // Update the notification state when the switch is toggled
                 setState(() {
-                  isDriverModeOn = newValue;
+                  widget.isDriver = newValue;
                   Get.to(DriverBottomBar(), transition: Transition.downToUp);
                   Utils().toastMessage('You are in Driver mode now.');
                 });

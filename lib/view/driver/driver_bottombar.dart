@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps/view/driver/home/driver_home_screen.dart';
-import 'package:google_maps/view/driver/rides/driver_rides_screen.dart';
 import 'package:google_maps/view/driver/profile/driver_profile_screen.dart';
-import 'package:google_maps/view/user/chats/chat_screen.dart';
+import 'package:google_maps/view/driver/rides/driver_rides_screen.dart';
+import 'package:google_maps/view/user/chats/chat_list_screen.dart';
 import 'package:google_maps/view/user/payment_history_screen.dart';
 
 class DriverBottomBar extends StatefulWidget {
@@ -50,7 +50,7 @@ class _DriverBottomBarState extends State<DriverBottomBar> {
         children: [
           DriverHomeScreen(),
           DriverRidesScreen(),
-          ChatScreen(),
+          ChatListScreen(),
           PaymentHistory(),
           DriverProfileScreen(),
         ],

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps/constants/colors.dart';
+import 'package:google_maps/models/user_info.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
 
 class AccountInfo extends StatelessWidget {
-  const AccountInfo({super.key});
+  final UserInfoModel userInfoModel;
+  const AccountInfo({super.key, required this.userInfoModel});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class AccountInfo extends StatelessWidget {
         backgroundColor: AppAssets.backgroundColor,
         elevation: 0,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
           child: Column(
@@ -27,7 +29,8 @@ class AccountInfo extends StatelessWidget {
               SizedBox(height: 10),
               CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/saim.jpg'),
+                backgroundImage:
+                    AssetImage('${userInfoModel.userProfilePicture}'),
               ),
               SizedBox(height: 10),
               CustomTextWidget(
@@ -37,15 +40,15 @@ class AccountInfo extends StatelessWidget {
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Name',
-                infoValue: 'John Smith',
+                infoValue: '${userInfoModel.username}',
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Phone Number',
-                infoValue: '+123456789',
+                infoValue: '${userInfoModel.userPhoneNumber.toString()}',
               ),
               ReUsableAccountInfoWidget(
                 infoType: 'Email',
-                infoValue: 'john@gmail.com',
+                infoValue: '${userInfoModel.userEmail}',
               ),
             ],
           ),

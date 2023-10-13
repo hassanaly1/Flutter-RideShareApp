@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_maps/models/user_info.dart';
 import 'package:google_maps/view/auth/login_screen.dart';
 import 'package:google_maps/view/user/profile/account_info.dart';
 import 'package:google_maps/view/user/profile/compliance_screen.dart';
@@ -18,7 +19,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  bool notification = false;
+  UserInfoModel userInfoModel = UserInfoModel(
+    username: 'Andrew Smith',
+    userEmail: 'andrew@gmail.com',
+    userProfilePicture: 'assets/saim.jpg',
+    userPhoneNumber: 1234567890,
+    isDriver: false,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,27 +35,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         leading: const Padding(
           padding: EdgeInsets.all(10.0),
           child: Image(
-            image: AssetImage(
-              'assets/applogo.jpg',
-            ),
+            image: AssetImage('assets/applogo.jpg'),
           ),
         ),
       ),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   leading: const Padding(
-      //     padding: EdgeInsets.fromLTRB(10.0, 10, 0, 10),
-      //     child: Image(
-      //       image: AssetImage(
-      //         'assets/applogo.jpg',
-      //       ),
-      //     ),
-      //   ),
-      //   title: const CustomTextWidget(
-      //       text: 'Profile', fWeight: FontWeight.w500, fSize: 16),
-      //   centerTitle: true,
-      // ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -58,23 +48,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 80,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  image: const DecorationImage(
-                      image: AssetImage('assets/saim.jpg'))),
+                  image: DecorationImage(
+                      image:
+                          AssetImage('${userInfoModel.userProfilePicture}'))),
             ),
             const SizedBox(height: 5),
-            const CustomTextWidget(
-                text: 'Andrew Ainsley', fWeight: FontWeight.w500, fSize: 18),
-            const CustomTextWidget(
-                text: '+123456789', fWeight: FontWeight.w200, fSize: 14),
+            CustomTextWidget(
+                text: '${userInfoModel.username}',
+                fWeight: FontWeight.w500,
+                fSize: 18),
+            CustomTextWidget(
+                text: '${userInfoModel.userPhoneNumber.toString()}',
+                fWeight: FontWeight.w200,
+                fSize: 14),
             const Divider(),
             ReUsableProfileTabs(
                 text: 'Profile',
-                onTap: () => Get.to(const AccountInfo(),
+                onTap: () => Get.to(AccountInfo(userInfoModel: userInfoModel),
                     transition: Transition.upToDown),
                 icon: Icons.person),
             ReUsableProfileTabs(
                 text: 'Mode',
-                onTap: () => Get.to(const ModeScreen(),
+                onTap: () => Get.to(
+                    ModeScreen(
+                      isDriver: userInfoModel.isDriver,
+                    ),
                     transition: Transition.rightToLeft),
                 icon: Icons.notifications),
             ReUsableProfileTabs(
@@ -98,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 text: 'Logout',
                 onTap: () => Get.to(const LoginScreen(),
                     transition: Transition.downToUp),
-                icon: Icons.person),
+                icon: Icons.logout_rounded),
           ],
         ),
       ),

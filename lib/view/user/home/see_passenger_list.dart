@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps/models/passenger_list_model.dart';
+import 'package:google_maps/models/passenger_detail_model.dart';
 import 'package:google_maps/widgets/custom_appbar.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
 
@@ -13,20 +13,17 @@ class SeePassengerList extends StatefulWidget {
 class _SeePassengerListState extends State<SeePassengerList> {
   List passangerList = [
     PassengerModel(
-      passengerName: 'David Root',
-      passengerPicture: 'assets/saim.jpg',
-      passengerDestination: '3333 Albert Street',
-    ),
+        passengerName: 'David Root',
+        passengerPicture: 'assets/saim.jpg',
+        passengerNumber: 123456789),
     PassengerModel(
-      passengerName: 'Clark Smith',
-      passengerPicture: 'assets/saim.jpg',
-      passengerDestination: '3333 Albert Street',
-    ),
+        passengerName: 'Clark Smith',
+        passengerPicture: 'assets/saim.jpg',
+        passengerNumber: 123456789),
     PassengerModel(
-      passengerName: 'Mr John',
-      passengerPicture: 'assets/saim.jpg',
-      passengerDestination: '3333 Albert Street',
-    ),
+        passengerName: 'Mr John',
+        passengerPicture: 'assets/saim.jpg',
+        passengerNumber: 123456789),
   ];
 
   @override
@@ -50,9 +47,6 @@ class _SeePassengerListState extends State<SeePassengerList> {
                     text: passenger.passengerName,
                     fSize: 16,
                     fWeight: FontWeight.w500,
-                  ),
-                  subtitle: CustomTextWidget(
-                    text: passenger.passengerDestination,
                   ),
                 ),
               );

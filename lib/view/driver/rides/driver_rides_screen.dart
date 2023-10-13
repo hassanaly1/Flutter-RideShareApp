@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_maps/models/passenger_detail_model.dart';
 import 'package:google_maps/view/driver/home/collect_payment_screen.dart';
 import 'package:google_maps/widgets/custom_appbar.dart';
 import 'package:google_maps/widgets/custom_button.dart';
@@ -16,6 +17,17 @@ class DriverRidesScreen extends StatefulWidget {
 
 class _DriverRidesScreenState extends State<DriverRidesScreen> {
   bool isRideAvailable = false;
+  PassengerRideRequestModel passengerRideRequestModel =
+      PassengerRideRequestModel(
+          pickupLocation: 'Pickup: 3400 Center St',
+          dropoffLocation: 'Drop: 712 rue Parc',
+          price: 12.00,
+          isRideAccepted: false,
+          passenger: PassengerModel(
+            passengerName: 'Ricky James',
+            passengerPicture: 'assets/saim.jpg',
+            passengerNumber: 123456789,
+          ));
 
   @override
   void initState() {
@@ -33,7 +45,8 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(title: 'Your Rides'),
+      appBar: CustomAppBarWidget(
+          title: 'Your Rides', automaticallyImplyLeading: false),
       body: Column(
         children: [
           const Divider(
@@ -68,8 +81,9 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CircleAvatar(
-                                child:
-                                    Image(image: AssetImage('assets/saim.jpg')),
+                                child: Image(
+                                    image: AssetImage(passengerRideRequestModel
+                                        .passenger.passengerPicture)),
                                 radius: 30,
                               ),
                               Column(
@@ -78,26 +92,30 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomTextWidget(
-                                    text: 'Ricky James',
+                                    text: passengerRideRequestModel
+                                        .passenger.passengerName,
                                     fSize: 16,
                                     fWeight: FontWeight.w600,
                                   ),
                                   SizedBox(width: 12),
                                   CustomTextWidget(
-                                    text: 'Pickup: 3400 Center St',
+                                    text: passengerRideRequestModel
+                                        .pickupLocation,
                                     fSize: 14,
                                     fWeight: FontWeight.w400,
                                   ),
                                   SizedBox(width: 12),
                                   CustomTextWidget(
-                                    text: 'Drop: 712 rue Parc',
+                                    text: passengerRideRequestModel
+                                        .dropoffLocation,
                                     fSize: 14,
                                     fWeight: FontWeight.w400,
                                   )
                                 ],
                               ),
                               CustomTextWidget(
-                                text: '\$15',
+                                text:
+                                    '\$${passengerRideRequestModel.price.toString()}',
                                 fSize: 14,
                               ),
                             ],
@@ -111,6 +129,8 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                                 buttonColor: Colors.green,
                                 buttonText: 'Accept',
                                 onTap: () {
+                                  passengerRideRequestModel.isRideAccepted =
+                                      true;
                                   Get.to(CollectPaymentScreen(),
                                       transition: Transition.downToUp);
                                 },
@@ -119,7 +139,13 @@ class _DriverRidesScreenState extends State<DriverRidesScreen> {
                                 width: 150,
                                 buttonColor: Colors.red,
                                 buttonText: 'Reject',
-                                onTap: () {},
+                                onTap: () {
+                                  passengerRideRequestModel.isRideAccepted =
+                                      false;
+                                  setState(() {
+                                    isRideAvailable = false;
+                                  });
+                                },
                               ),
                             ],
                           ),

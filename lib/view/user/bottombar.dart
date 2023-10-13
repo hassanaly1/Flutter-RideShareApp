@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps/view/user/bookings/my_bookings.dart';
-import 'package:google_maps/view/user/chats/chat_screen.dart';
+import 'package:google_maps/view/user/chats/chat_list_screen.dart';
 import 'package:google_maps/view/user/home/home_screen.dart';
 import 'package:google_maps/view/user/payment_history_screen.dart';
 import 'package:google_maps/view/user/profile/profile_screen.dart';
@@ -50,7 +50,7 @@ class _BottomBarState extends State<BottomBar> {
         children: const [
           HomeScreen(),
           MyBookings(),
-          ChatScreen(),
+          ChatListScreen(),
           PaymentHistory(),
           ProfileScreen(),
         ],

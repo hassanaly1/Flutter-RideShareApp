@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:google_maps/constants/utils.dart';
+import 'package:google_maps/models/payment_history_model.dart';
 import 'package:google_maps/widgets/custom_appbar.dart';
 import 'package:google_maps/widgets/custom_button.dart';
 import 'package:google_maps/widgets/custom_text_widget.dart';
@@ -14,18 +15,45 @@ class PaymentHistory extends StatefulWidget {
 }
 
 class _PaymentHistoryState extends State<PaymentHistory> {
-  List<List<String>> paymentHistory = [
-    ['Rayford Midgett', '\$25'],
-    ['Alicia Johnson', '\$50'],
-    ['John Smith', '\$75'],
-    ['Emily Davis', '\$30'],
-    ['Michael Brown', '\$100'],
-    ['Maria Garcia', '\$45'],
-    ['David Wilson', '\$60'],
-    ['Linda Martinez', '\$55'],
-    ['Robert Johnson', '\$70'],
-    ['Susan Lee', '\$90'],
+  List<PaymentHistoryModel> paymentHistory = [
+    PaymentHistoryModel(
+      userName: 'Rayford Midgett',
+      userImage: 'assets/saim.jpg',
+      price: 25.00,
+      feedback: 4,
+    ),
+    PaymentHistoryModel(
+      userName: 'John Doe',
+      userImage: 'assets/saim.jpg',
+      price: 30.50,
+      feedback: 5,
+    ),
+    PaymentHistoryModel(
+      userName: 'Jane Smith',
+      userImage: 'assets/saim.jpg',
+      price: 15.25,
+      feedback: 3,
+    ),
+    PaymentHistoryModel(
+      userName: 'Alice Johnson',
+      userImage: 'assets/saim.jpg',
+      price: 40.00,
+      feedback: 5,
+    ),
+    PaymentHistoryModel(
+      userName: 'Bob Wilson',
+      userImage: 'assets/saim.jpg',
+      price: 18.75,
+      feedback: 4,
+    ),
+    PaymentHistoryModel(
+      userName: 'Eva Brown',
+      userImage: 'assets/saim.jpg',
+      price: 22.80,
+      feedback: 4,
+    ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,36 +77,38 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 shrinkWrap: true,
                 itemCount: paymentHistory.length,
                 itemBuilder: (context, index) {
+                  final payment = paymentHistory[index];
                   return Card(
                     child: ListTile(
-                      // onTap: () => Get.to(DriverChatScreen(),
-                      // onTap: () => Get.to(() => DriverChatScreen(),
-                      //     transition: Transition.rightToLeft),
-
                       leading: CircleAvatar(
-                        child: Image(image: AssetImage('assets/saim.jpg')),
+                        child: Image(image: AssetImage(payment.userImage)),
                         radius: 30,
                       ),
                       title: CustomTextWidget(
-                        text: paymentHistory[index][0].toString(),
+                        text: payment.userName,
                         fSize: 16,
-                        fWeight: FontWeight.w600,
+                        fWeight: FontWeight.w500,
                       ),
                       subtitle: InkWell(
                         onTap: () {
-                          openModal();
+                          openModal(
+                            userName: payment.userName,
+                            userImage: payment.userImage,
+                            price: payment.price,
+                            feedback: payment.feedback,
+                          );
                         },
                         child: CustomTextWidget(
                           text: 'Give Feedback',
                           textColor: Colors.red,
-                          fSize: 14,
-                          fWeight: FontWeight.w400,
+                          fSize: 12,
+                          fWeight: FontWeight.w300,
                         ),
                       ),
                       trailing: CustomTextWidget(
-                        text: paymentHistory[index][1].toString(),
-                        fSize: 16,
-                        fWeight: FontWeight.w600,
+                        text: '\$${payment.price.toString()}',
+                        fSize: 14,
+                        fWeight: FontWeight.w300,
                       ),
                     ),
                   );
@@ -91,7 +121,11 @@ class _PaymentHistoryState extends State<PaymentHistory> {
     );
   }
 
-  Future<dynamic> openModal() {
+  Future<dynamic> openModal(
+      {required userName,
+      required userImage,
+      required price,
+      required feedback}) {
     return showDialog(
       barrierDismissible: false,
       context: context,
@@ -100,12 +134,25 @@ class _PaymentHistoryState extends State<PaymentHistory> {
           padding: const EdgeInsets.all(15.0),
           child: AlertDialog(
             actions: [
-              Center(
-                child: CustomTextWidget(
-                  text: 'How is your Driver?',
-                  fSize: 16,
-                  fWeight: FontWeight.w700,
-                ),
+              Column(
+                children: [
+                  Center(
+                    child: CustomTextWidget(
+                      text: 'Give feedback of Driver',
+                      fSize: 14,
+                      fWeight: FontWeight.w500,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Center(
+                    child: CustomTextWidget(
+                      text: '$userName',
+                      fSize: 16,
+                      fWeight: FontWeight.w700,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 15),
               Center(
@@ -131,6 +178,11 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 buttonText: 'Submit',
                 onTap: () {
                   Utils().toastMessage('Review submitted Successfully');
+                  PaymentHistoryModel(
+                      userName: userName,
+                      userImage: userImage,
+                      price: price,
+                      feedback: feedback);
                   Get.back();
                 },
               ),
